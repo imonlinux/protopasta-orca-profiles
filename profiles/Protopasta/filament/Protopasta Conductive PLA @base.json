@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Conductive PLA @base",
+	"inherits": "fdm_filament_pla",
+	"from": "system",
+	"filament_id": "PPF015",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.24"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Carbon-black conductive PLA (4043D base). FAQ: 215-230C, run on the hotter side for layer adhesion; TDS 210-230C, 60C plate; table 220C@6/240C@12, 55C plate.\nUse Magigoo or glue stick - prints can fuse to smooth plate surfaces when hot. Purge thoroughly on filament changes. Filament is quite flexible; printed parts are weaker along layer lines. Low-voltage circuits, touch sensors, ESD applications."
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"220"
+	],
+	"nozzle_temperature_initial_layer": [
+		"220"
+	],
+	"nozzle_temperature_range_high": [
+		"240"
+	],
+	"nozzle_temperature_range_low": [
+		"210"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

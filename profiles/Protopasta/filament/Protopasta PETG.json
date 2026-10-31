@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta PETG",
+	"inherits": "Protopasta PETG @base",
+	"from": "system",
+	"setting_id": "KI2mZq91NhmyyZvj",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

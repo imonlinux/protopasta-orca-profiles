@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta High Flow PLA",
+	"inherits": "Protopasta High Flow PLA @base",
+	"from": "system",
+	"setting_id": "o0dwMY4VqWrjNZPp",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

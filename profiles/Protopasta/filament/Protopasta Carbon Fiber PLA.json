@@ -1,0 +1,13 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber PLA",
+	"inherits": "Protopasta Carbon Fiber PLA @base",
+	"from": "system",
+	"setting_id": "gKvZpzgWLpu3wrQi",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": "",
+	"filament_flow_ratio": [
+		"0.95"
+	]
+}

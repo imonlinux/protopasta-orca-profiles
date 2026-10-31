@@ -1,0 +1,13 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber HTPETG",
+	"inherits": "Protopasta Carbon Fiber HTPETG @base",
+	"from": "system",
+	"setting_id": "UA9oM69Eo6NNvy8s",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": "",
+	"filament_flow_ratio": [
+		"0.95"
+	]
+}

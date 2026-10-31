@@ -1,0 +1,13 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber PCTG",
+	"inherits": "Protopasta Carbon Fiber PCTG @base",
+	"from": "system",
+	"setting_id": "1BOz87mUbTu7TCrt",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": "",
+	"filament_flow_ratio": [
+		"0.95"
+	]
+}

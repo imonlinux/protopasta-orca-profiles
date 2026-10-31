@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta PETG @base",
+	"inherits": "fdm_filament_pet",
+	"from": "system",
+	"filament_id": "PPF018",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.2"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Covers Simply PETG colors, translucent PETG and Recycled PETG.\nProto-Pasta data: 250C@12 mm3/s, 80C plate. Use Magigoo or glue stick to avoid fusing to smooth build surfaces. Dry below 65C if needed.\nLower nozzle temperature reduces stringing on the metal-composite PETGs."
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

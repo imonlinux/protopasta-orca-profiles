@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber PCTG @base",
+	"inherits": "fdm_filament_pctg",
+	"from": "system",
+	"filament_id": "PPF023",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"High Impact (gray, ~20% stronger / 115% stiffer than unfilled PCTG) and High Strength (black, ~45% stronger / 250% stiffer) carbon-fiber PCTG.\nProto-Pasta publishes no numeric settings for this line; PCTG-family defaults applied. Hardened nozzle and gears required (abrasive). Use Magigoo or glue stick."
+	],
+	"filament_type": [
+		"PETG-CF"
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

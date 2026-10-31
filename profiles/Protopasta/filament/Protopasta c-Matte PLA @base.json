@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta c-Matte PLA @base",
+	"inherits": "fdm_filament_pla",
+	"from": "system",
+	"filament_id": "PPF004",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.3"
+	],
+	"filament_max_volumetric_speed": [
+		"18"
+	],
+	"filament_notes": [
+		"c-Matte PLA (calcium-carbonate matte finish). Proto-Pasta data: 200C@12, 220C@18 mm3/s, 45C plate.\nLet the plate cool below 40C before removing prints."
+	],
+	"hot_plate_temp": [
+		"45"
+	],
+	"hot_plate_temp_initial_layer": [
+		"45"
+	],
+	"nozzle_temperature": [
+		"200"
+	],
+	"nozzle_temperature_initial_layer": [
+		"200"
+	],
+	"nozzle_temperature_range_high": [
+		"220"
+	],
+	"nozzle_temperature_range_low": [
+		"190"
+	],
+	"textured_plate_temp": [
+		"45"
+	],
+	"textured_plate_temp_initial_layer": [
+		"45"
+	]
+}

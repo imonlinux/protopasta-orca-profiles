@@ -1,0 +1,47 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber PETG @base",
+	"inherits": "fdm_filament_pet",
+	"from": "system",
+	"filament_id": "PPF019",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.2"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Covers Carbon Fiber PETG and Recycled Carbon Fiber PETG.\nProto-Pasta data: 250C@12 mm3/s, 80C plate. Hardened nozzle and gears required (abrasive). Use Magigoo or glue stick; purge thoroughly.\nFor the high-temperature HTPETG carbon-fiber lines see the dedicated Protopasta Carbon Fiber HTPETG profile."
+	],
+	"filament_type": [
+		"PETG-CF"
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

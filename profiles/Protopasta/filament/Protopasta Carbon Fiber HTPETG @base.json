@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber HTPETG @base",
+	"inherits": "fdm_filament_pet",
+	"from": "system",
+	"filament_id": "PPF020",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"High Strength (black, higher CF) and High Impact (galaxy black, lower CF) carbon-fiber HTPETG. ABS/ASA-level heat resistance without fumes.\nProduct page: nozzle up to 300C - higher temps improve layer adhesion but risk overheating when printing slow. Bed from 100C up prints flat. Consider flow below 100% and a nozzle-wipe-at-layer-change gcode to limit buildup; drying may not fully resolve nozzle stick.\nHardened nozzle and gears required (abrasive). Use Magigoo or glue stick."
+	],
+	"filament_type": [
+		"PETG-CF"
+	],
+	"hot_plate_temp": [
+		"100"
+	],
+	"hot_plate_temp_initial_layer": [
+		"100"
+	],
+	"nozzle_temperature": [
+		"260"
+	],
+	"nozzle_temperature_initial_layer": [
+		"260"
+	],
+	"nozzle_temperature_range_high": [
+		"300"
+	],
+	"nozzle_temperature_range_low": [
+		"240"
+	],
+	"textured_plate_temp": [
+		"100"
+	],
+	"textured_plate_temp_initial_layer": [
+		"100"
+	]
+}

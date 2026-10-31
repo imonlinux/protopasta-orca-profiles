@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Matte Fiber HTPLA",
+	"inherits": "Protopasta Matte Fiber HTPLA @base",
+	"from": "system",
+	"setting_id": "WRpQ6zgXcBo0S00o",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

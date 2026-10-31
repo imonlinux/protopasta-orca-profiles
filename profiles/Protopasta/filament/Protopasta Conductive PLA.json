@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Conductive PLA",
+	"inherits": "Protopasta Conductive PLA @base",
+	"from": "system",
+	"setting_id": "k0XSO3wSy03WywdT",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

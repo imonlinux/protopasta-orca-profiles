@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Glass Fiber HTPETG",
+	"inherits": "Protopasta Glass Fiber HTPETG @base",
+	"from": "system",
+	"setting_id": "BHBS2DWoZAUZpIYa",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

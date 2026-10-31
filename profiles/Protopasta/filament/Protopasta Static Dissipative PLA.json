@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Static Dissipative PLA",
+	"inherits": "Protopasta Static Dissipative PLA @base",
+	"from": "system",
+	"setting_id": "OGbKOucql1T2ShTZ",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

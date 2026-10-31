@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Matte Fiber HTPLA @base",
+	"inherits": "fdm_filament_pla",
+	"from": "system",
+	"filament_id": "PPF005",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.14"
+	],
+	"filament_max_volumetric_speed": [
+		"18"
+	],
+	"filament_notes": [
+		"Matte Fiber HTPLA including wood-tone colors. Proto-Pasta data: 200C@12, 220C@18 mm3/s, 55C plate. TDS: 195C nozzle, 60C bed.\nAvoid printing below 3 mm3/s. Fiber filling is rough on PTFE tubing - replace tubing more often."
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"200"
+	],
+	"nozzle_temperature_initial_layer": [
+		"200"
+	],
+	"nozzle_temperature_range_high": [
+		"220"
+	],
+	"nozzle_temperature_range_low": [
+		"190"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

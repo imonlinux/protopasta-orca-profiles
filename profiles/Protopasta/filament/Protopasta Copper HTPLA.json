@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Copper HTPLA",
+	"inherits": "Protopasta Copper HTPLA @base",
+	"from": "system",
+	"setting_id": "8OB71roSXYHnMqoq",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

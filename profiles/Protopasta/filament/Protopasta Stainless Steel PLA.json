@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Stainless Steel PLA",
+	"inherits": "Protopasta Stainless Steel PLA @base",
+	"from": "system",
+	"setting_id": "wCdmV4t7EQnm4QU9",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

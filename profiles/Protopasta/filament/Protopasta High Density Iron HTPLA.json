@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta High Density Iron HTPLA",
+	"inherits": "Protopasta High Density Iron HTPLA @base",
+	"from": "system",
+	"setting_id": "2gOnQgpxmYgnj8rv",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

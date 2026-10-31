@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Brass HTPLA",
+	"inherits": "Protopasta Brass HTPLA @base",
+	"from": "system",
+	"setting_id": "gNpq5WG5iauGJsKr",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta HTPLA @base",
+	"inherits": "fdm_filament_pla",
+	"from": "system",
+	"filament_id": "PPF002",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.24"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Covers Premium HTPLA v3, High Temp PLA v2 and all color lines (opaque, translucent, metallic, glitter, fluorescent, Quantum Dot, glow).\n220C suits ~6 mm3/s; raise toward 240C at 12 mm3/s (240C also improves layer fusion). Quantum Dot TDS: 220-240C nozzle, 55-65C bed.\nAnneal for heat resistance up to ~140-155C (vs ~55-60C as printed): oven at 85-115C for 5-60 min, ideally buried in silica sand or submerged in gel; treat with supports on.\nPrusa MK2/MK3 stock heatbreak: 235-240C helps avoid heat-creep jams."
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"220"
+	],
+	"nozzle_temperature_initial_layer": [
+		"220"
+	],
+	"nozzle_temperature_range_high": [
+		"240"
+	],
+	"nozzle_temperature_range_low": [
+		"195"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

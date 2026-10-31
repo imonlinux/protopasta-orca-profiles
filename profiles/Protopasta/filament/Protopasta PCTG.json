@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta PCTG",
+	"inherits": "Protopasta PCTG @base",
+	"from": "system",
+	"setting_id": "Yh7odpSjjQtRitUc",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

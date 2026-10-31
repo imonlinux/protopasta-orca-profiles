@@ -1,0 +1,46 @@
+{
+	"filament_settings_id": [
+		"Protopasta Magnetic Iron PLA"
+	],
+	"from": "User",
+	"inherits": "Generic PLA @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Magnetic Iron PLA",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"1.85"
+	],
+	"filament_max_volumetric_speed": [
+		"24"
+	],
+	"filament_notes": [
+		"Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ: prints ~10C cooler than standard PLA (185-195C). Avoid printing below 3 mm3/s.\nIf warping occurs, reduce fan speed or print slower (table cap 24 mm3/s is a maximum, not a target). Ferromagnetic but not a magnet itself; rustable for aged finishes. Brittle in spool form; ~100 m per 500 g."
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"190"
+	],
+	"nozzle_temperature_initial_layer": [
+		"190"
+	],
+	"nozzle_temperature_range_high": [
+		"220"
+	],
+	"nozzle_temperature_range_low": [
+		"185"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

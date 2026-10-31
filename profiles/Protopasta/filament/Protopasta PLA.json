@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta PLA",
+	"inherits": "Protopasta PLA @base",
+	"from": "system",
+	"setting_id": "j2NAmL30APEtNYWZ",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

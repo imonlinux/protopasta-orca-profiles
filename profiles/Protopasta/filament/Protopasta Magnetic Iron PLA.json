@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Magnetic Iron PLA",
+	"inherits": "Protopasta Magnetic Iron PLA @base",
+	"from": "system",
+	"setting_id": "9H98zQbQ58kKPHC7",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta HTPLA",
+	"inherits": "Protopasta HTPLA @base",
+	"from": "system",
+	"setting_id": "wo4UALOOMzzD5N8v",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

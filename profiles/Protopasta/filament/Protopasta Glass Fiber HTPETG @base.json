@@ -1,0 +1,41 @@
+{
+	"type": "filament",
+	"name": "Protopasta Glass Fiber HTPETG @base",
+	"inherits": "fdm_filament_pet",
+	"from": "system",
+	"filament_id": "PPF021",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Glass Fiber HTPETG (Highfive Blue, White).\nProto-Pasta publishes no numeric settings for this line; PETG-family defaults applied (250C@12 mm3/s, 80C plate). Stiff like PLA, durable like PETG, higher temperature resistance than GF PCTG.\nGlass fiber is abrasive - hardened nozzle recommended. Use Magigoo or glue stick."
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

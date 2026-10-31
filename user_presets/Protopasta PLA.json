@@ -1,0 +1,46 @@
+{
+	"filament_settings_id": [
+		"Protopasta PLA"
+	],
+	"from": "User",
+	"inherits": "Generic PLA @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta PLA",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"1.24"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Covers Back to Basics PLA (Ingeo 4043D) and Recycled PLA.\nProto-Pasta data: 220C suits ~6 mm3/s; raise toward 240C when printing at the full 12 mm3/s cap. Getting-started range: 195-225C nozzle, 50-60C bed.\nDry below 50C if needed; printing without drying is normally fine."
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"220"
+	],
+	"nozzle_temperature_initial_layer": [
+		"220"
+	],
+	"nozzle_temperature_range_high": [
+		"240"
+	],
+	"nozzle_temperature_range_low": [
+		"195"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

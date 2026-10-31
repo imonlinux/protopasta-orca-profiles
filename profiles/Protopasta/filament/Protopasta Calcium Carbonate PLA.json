@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Calcium Carbonate PLA",
+	"inherits": "Protopasta Calcium Carbonate PLA @base",
+	"from": "system",
+	"setting_id": "iGn3C12adq0K0Dns",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

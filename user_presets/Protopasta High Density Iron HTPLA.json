@@ -1,0 +1,46 @@
+{
+	"filament_settings_id": [
+		"Protopasta High Density Iron HTPLA"
+	],
+	"from": "User",
+	"inherits": "Generic PLA @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta High Density Iron HTPLA",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"2.4"
+	],
+	"filament_max_volumetric_speed": [
+		"24"
+	],
+	"filament_notes": [
+		"60% iron by weight. Proto-Pasta publishes no TDS for this line; settings follow their metal-composite row (200C@24 mm3/s, 55C plate) and density is estimated at ~2x base polymer from their published description - verify by weighing a known length.\nAvoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in spool form. Anneal like HTPLA for heat resistance."
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"200"
+	],
+	"nozzle_temperature_initial_layer": [
+		"200"
+	],
+	"nozzle_temperature_range_high": [
+		"220"
+	],
+	"nozzle_temperature_range_low": [
+		"190"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

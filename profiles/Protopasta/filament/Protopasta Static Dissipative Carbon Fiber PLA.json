@@ -1,0 +1,13 @@
+{
+	"type": "filament",
+	"name": "Protopasta Static Dissipative Carbon Fiber PLA",
+	"inherits": "Protopasta Static Dissipative Carbon Fiber PLA @base",
+	"from": "system",
+	"setting_id": "W5hhptcOj0GYTJLI",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": "",
+	"filament_flow_ratio": [
+		"0.95"
+	]
+}

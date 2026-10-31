@@ -1,0 +1,52 @@
+{
+	"filament_settings_id": [
+		"Protopasta Carbon Fiber PLA"
+	],
+	"from": "User",
+	"inherits": "Generic PLA-CF @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Carbon Fiber PLA",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"1.3"
+	],
+	"filament_flow_ratio": [
+		"0.95"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"15% chopped-carbon-fiber PLA/HTPLA; covers Carbon Fiber PLA, High Temp CF PLA and Recycled CF PLA.\nFAQ range 195-220C (TDS 205C); Material Data Table: 220C@6, 240C@12 mm3/s, 55C plate. Hardened nozzle and drive gears recommended - fiber is abrasive. Proto-Pasta cites good results with 0.5 mm nozzles and spring-loaded direct-drive extruders. Filament is brittle in spool form - avoid sharp bends.\nRecycled variant prints the same."
+	],
+	"filament_type": [
+		"PLA-CF"
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"210"
+	],
+	"nozzle_temperature_initial_layer": [
+		"210"
+	],
+	"nozzle_temperature_range_high": [
+		"240"
+	],
+	"nozzle_temperature_range_low": [
+		"195"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

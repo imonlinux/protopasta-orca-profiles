@@ -1,0 +1,13 @@
+{
+	"type": "filament",
+	"name": "Protopasta Carbon Fiber PETG",
+	"inherits": "Protopasta Carbon Fiber PETG @base",
+	"from": "system",
+	"setting_id": "xHDuBzulfyC24H1g",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": "",
+	"filament_flow_ratio": [
+		"0.95"
+	]
+}

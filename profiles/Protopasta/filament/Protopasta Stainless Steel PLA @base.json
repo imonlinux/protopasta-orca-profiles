@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Stainless Steel PLA @base",
+	"inherits": "fdm_filament_pla",
+	"from": "system",
+	"filament_id": "PPF008",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"2.3"
+	],
+	"filament_max_volumetric_speed": [
+		"24"
+	],
+	"filament_notes": [
+		"Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ range 195-220C (215C cited with a 0.5 mm nozzle). Avoid printing below 3 mm3/s.\nDense (2.3 g/cm3, ~90 m per 500 g) and brittle in spool form. Hardened brass or steel nozzle recommended for wear. Finish by wire brushing, tumbling, or buffing with compound."
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"200"
+	],
+	"nozzle_temperature_initial_layer": [
+		"200"
+	],
+	"nozzle_temperature_range_high": [
+		"220"
+	],
+	"nozzle_temperature_range_low": [
+		"190"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"type": "filament",
+	"name": "Protopasta PCTG @base",
+	"inherits": "fdm_filament_pctg",
+	"from": "system",
+	"filament_id": "PPF022",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Clear PCTG.\nProto-Pasta publishes no numeric settings for this line; PCTG-family defaults applied. Use Magigoo or glue stick."
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

@@ -15,7 +15,7 @@
 		"18"
 	],
 	"filament_notes": [
-		"HFPLA. Proto-Pasta data: 200C@12, 220C@18 mm3/s, 45C plate.\nLet the plate cool below 40C before removing prints."
+		"High Flow PLA (HFPLA). Material Data Table: 200C up to 12 mm3/s, 220C up to 18 mm3/s, 45C plate. This profile uses 200C with an 18 mm3/s cap - raise toward 220C when printing near the cap.\nLet the plate cool below 40C before removing prints."
 	],
 	"hot_plate_temp": [
 		"45"

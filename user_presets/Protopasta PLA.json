@@ -14,7 +14,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Covers Back to Basics PLA (Ingeo 4043D) and Recycled PLA.\nProto-Pasta data: 220C suits ~6 mm3/s; raise toward 240C when printing at the full 12 mm3/s cap. Getting-started range: 195-225C nozzle, 50-60C bed.\nDry below 50C if needed; printing without drying is normally fine."
+		"Covers Back to Basics PLA and Recycled PLA.\nMaterial Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate. This profile uses 220C with a 12 mm3/s cap - raise toward 240C when printing near the cap. Getting-started page: 195-225C nozzle, 50-60C bed.\nProto-Pasta finds PLA normally prints fine without drying; if you do dry it, stay below 50C."
 	],
 	"filament_vendor": [
 		"Protopasta"

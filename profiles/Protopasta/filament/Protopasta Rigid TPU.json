@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Rigid TPU",
+	"inherits": "Protopasta Rigid TPU @base",
+	"from": "system",
+	"setting_id": "aPscnMUQYitkPt71",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

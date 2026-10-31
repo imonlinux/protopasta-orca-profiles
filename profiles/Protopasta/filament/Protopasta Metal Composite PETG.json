@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Metal Composite PETG",
+	"inherits": "Protopasta Metal Composite PETG @base",
+	"from": "system",
+	"setting_id": "XSVCtnO5WWVaRirM",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

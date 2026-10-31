@@ -12,7 +12,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"High Strength (black, higher CF) and High Impact (galaxy black, lower CF) carbon-fiber HTPETG. ABS/ASA-level heat resistance without fumes.\nProduct page: nozzle up to 300C - higher temps improve layer adhesion but risk overheating when printing slow. Bed from 100C up prints flat. Consider flow below 100% and a nozzle-wipe-at-layer-change gcode to limit buildup; drying may not fully resolve nozzle stick.\nHardened nozzle and gears required (abrasive). Use Magigoo or glue stick."
+		"High Strength (black, more carbon fiber) and High Impact (Galaxy Black, less carbon fiber) HTPETG, with ABS/ASA-level heat resistance.\nProduct pages: nozzle up to 300C (hotter improves layer adhesion but risks overheating when printing slowly), bed 100C+, flow below 100% and a nozzle wipe at layer change to limit buildup. Proto-Pasta's launch article (EX14) printed at 300C and chose 6 mm3/s for a full melt. This profile's 260C with a 12 mm3/s cap is our own middle-ground choice, not a Proto-Pasta number.\nDry before printing (wet filament causes nozzle buildup). Hard steel nozzle required (abrasive). EX14 also turned auxiliary and chamber fans off and used glue stick."
 	],
 	"filament_type": [
 		"PETG-CF"

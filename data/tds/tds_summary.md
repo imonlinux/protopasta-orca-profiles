@@ -1,7 +1,6 @@
 # Proto-Pasta TDS Data Summary
 
-Source: https://proto-pasta.com/pages/material-data-table (identical table also at
-https://proto-pasta.com/pages/documentation). PDFs hosted on
+Source: https://proto-pasta.com/pages/material-data-table. PDFs hosted on
 `cdn.shopify.com/s/files/1/0717/9095/files/`. Downloaded 2026-10-18.
 
 Legend:
@@ -39,11 +38,11 @@ Legend:
 | Carbon Fiber PETG (PETG-CF7) | SDS: 1.2 | Table: 250 C @ 12 mm3/s, 80 C plate. No dedicated TDS published. Hard steel nozzle + gears recommended | `sds_carbon_fiber_petg.pdf` (PETG_CF7.pdf) |
 | Static Dissipative PETG (PETG-ESD) | SDS: 1.2 (TDS does not state density) | TDS: print 250-290 C, build plate 70-80 C, drying 65 C for 6 h. Table: 250 C @ 12 mm3/s, 80 C plate | `tds_static_dissipative_petg.pdf` (PETGxxxx-ESD_TDS.pdf), `sds_static_dissipative_petg.pdf` (PETG_ESD.pdf) |
 
-## Lines with NO TDS/SDS found (not on material-data-table or documentation page)
+## Lines with NO TDS/SDS found (not on the material-data-table page)
 
-Checked the material-data-table, the documentation page (same table), the relevant
-product pages (which contain no PDF links at all), and probed plausible Shopify CDN
-filenames (all 404). No published documents found for:
+Checked the material-data-table, the relevant product pages (which contain no PDF
+links at all), and probed plausible Shopify CDN filenames (all 404). No published
+documents found for:
 
 - PCTG (Clear PCTG, CF PCTG, GF PCTG products)
 - Rigid TPU
@@ -54,8 +53,12 @@ filenames (all 404). No published documents found for:
 - High Density Steel HTPLA
 - High Density Iron HTPLA
 
-The only web data for these lines is the product-page text (not extracted here);
-no density or temperature values should be assumed for them.
+Carbon Fiber HTPETG and Glass Fiber HTPLA have no Material Data Table row either and
+were not probed.
+
+Product pages and launch articles for these lines do give print temperatures (see
+`docs/SOURCES.md`). No densities are published for them, except "about 2x PETG" for
+the metal-composite PETGs.
 
 ## Notes
 

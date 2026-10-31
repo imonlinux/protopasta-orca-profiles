@@ -14,7 +14,7 @@
 		"24"
 	],
 	"filament_notes": [
-		"Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ range 195-220C (215C cited with a 0.5 mm nozzle). Avoid printing below 3 mm3/s.\nDense (2.3 g/cm3, ~90 m per 500 g) and brittle in spool form. Hardened brass or steel nozzle recommended for wear. Finish by wire brushing, tumbling, or buffing with compound."
+		"Steel-filled PLA. Material Data Table: 200C up to 24 mm3/s, 55C plate; avoid printing below 3 mm3/s; hard steel nozzle and gears recommended. FAQ: 195-220C (215C with a 0.5 mm nozzle). TDS: 198C, 60C bed.\nDense (about 2.3 g/cm3; about 90 m per 500 g) and more brittle than PLA as filament. Finish by wire brushing, tumbling, or wheel polishing with compound."
 	],
 	"filament_vendor": [
 		"Protopasta"

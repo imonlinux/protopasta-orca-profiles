@@ -3,13 +3,19 @@
 
 Checks:
   1. Every file is valid JSON.
-  2. Structure: type/name/from/instantiation present; header fields match
-     Orca conventions (@base pairs with @System).
+  2. Structure: type/name/inherits/from present, name matches the file
+     name, instantiation is "true"/"false", and every instantiated profile
+     has a matching "<name> @base" file.
   3. All settings values are arrays (Orca requirement).
   4. Every 'inherits' target resolves (own @base, or an fdm_filament_* base
-     shipped in OrcaSlicer's OrcaFilamentLibrary).
+     shipped in OrcaSlicer 2.4.2's OrcaFilamentLibrary).
   5. filament_id and setting_id uniqueness.
   6. Vendor filament_list <-> files on disk parity.
+  7. User presets: valid JSON, from "User", name/filament_settings_id match,
+     inherit a known Generic @System profile, filament_vendor set.
+
+It does not check that the zips in dist/ are up to date, and it does not
+sanity-check the numbers themselves.
 """
 
 import json
@@ -20,16 +26,17 @@ REPO = Path(__file__).resolve().parent.parent
 PROFILES = REPO / "profiles"
 FILAMENT_DIR = PROFILES / "Protopasta" / "filament"
 
-# Base profiles shipped with OrcaSlicer 2.x (OrcaFilamentLibrary)
+# Base profiles in OrcaSlicer 2.4.2's OrcaFilamentLibrary/filament/base/
+# (the same 22 files ship in 2.5.0-beta).
 ORCA_BASES = {
-    "fdm_filament_common", "fdm_filament_abs", "fdm_filament_asa",
-    "fdm_filament_bvoh", "fdm_filament_cope", "fdm_filament_eva",
+    "fdm_filament_abs", "fdm_filament_asa", "fdm_filament_bvoh",
+    "fdm_filament_common", "fdm_filament_cope", "fdm_filament_eva",
     "fdm_filament_hips", "fdm_filament_pa", "fdm_filament_paht",
     "fdm_filament_pc", "fdm_filament_pctg", "fdm_filament_pe",
-    "fdm_filament_pet", "fdm_filament_pet_lowtemp", "fdm_filament_pla",
-    "fdm_filament_pp", "fdm_filament_ppa_cf", "fdm_filament_pva",
-    "fdm_filament_sbs", "fdm_filament_tpu", "fdm_filament_nylon",
-    "fdm_filament_pfa", "fdm_filament_pecf", "fdm_filament_pla_wood",
+    "fdm_filament_pet", "fdm_filament_pha", "fdm_filament_pla",
+    "fdm_filament_pla_silk", "fdm_filament_pp", "fdm_filament_ppa",
+    "fdm_filament_pps", "fdm_filament_pva", "fdm_filament_sbs",
+    "fdm_filament_tpu",
 }
 
 HEADER_KEYS = ("type", "name", "inherits", "from")
@@ -103,9 +110,9 @@ for f in files:
         if base_partner not in names:
             err(f"{f.name}: instantiated profile has no @base partner {base_partner!r}")
 
-# @System naming deviation note: Orca core uses '@System' suffix inside
-# OrcaFilamentLibrary; standalone vendor bundles (Elegoo style) use plain
-# names for instantiated profiles. We follow the standalone convention.
+# Naming note: inside OrcaFilamentLibrary, selectable profiles end in
+# "@System" (e.g. "Generic PLA @System"). This bundle's selectable profiles
+# use plain names instead; rename them to "... @System" if upstreaming.
 
 # 5: id formats
 for fid, fname in filament_ids.items():

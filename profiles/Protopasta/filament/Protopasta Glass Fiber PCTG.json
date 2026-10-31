@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Glass Fiber PCTG",
+	"inherits": "Protopasta Glass Fiber PCTG @base",
+	"from": "system",
+	"setting_id": "eDiosRRZJu17WOTH",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

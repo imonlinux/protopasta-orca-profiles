@@ -1,0 +1,52 @@
+{
+	"filament_settings_id": [
+		"Protopasta Carbon Fiber PETG"
+	],
+	"from": "User",
+	"inherits": "Generic PETG-CF @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Carbon Fiber PETG",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"1.2"
+	],
+	"filament_flow_ratio": [
+		"0.95"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Covers Carbon Fiber PETG (PETG-CF7) and Recycled Carbon Fiber PETG.\nMaterial Data Table: 250C up to 12 mm3/s, 80C plate. Product page: 235C and up (they print up to 275C; 255C is a good compromise), 70C+ bed; reduce flow below 100% if material builds up on the nozzle.\nAbrasive: hard steel nozzle and gears recommended; replace PTFE tubing more often. Use Magigoo or glue stick. For the HTPETG lines, use the Protopasta Carbon Fiber HTPETG profile instead."
+	],
+	"filament_type": [
+		"PETG-CF"
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

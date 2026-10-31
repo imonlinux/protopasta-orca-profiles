@@ -1,0 +1,44 @@
+{
+	"type": "filament",
+	"name": "Protopasta Static Dissipative PETG @base",
+	"inherits": "fdm_filament_pet",
+	"from": "system",
+	"filament_id": "PPF026",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_density": [
+		"1.2"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Static Dissipative PETG. TDS: 250-290C, 70-80C plate, up to 8 mm3/s, 0.4 mm or larger nozzle; drying highly recommended (65C for 6 hours). Material Data Table: 250C up to 12 mm3/s, 80C plate. This profile uses the table's 12 mm3/s cap; the TDS only goes up to 8 mm3/s.\nUse Magigoo or glue stick so prints don't fuse to the plate."
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"290"
+	],
+	"nozzle_temperature_range_low": [
+		"250"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

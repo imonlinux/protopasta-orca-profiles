@@ -1,0 +1,49 @@
+{
+	"filament_settings_id": [
+		"Protopasta Carbon Fiber PCTG"
+	],
+	"from": "User",
+	"inherits": "Generic PETG-CF @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Carbon Fiber PCTG",
+	"version": "2.4.2.0",
+	"filament_flow_ratio": [
+		"0.95"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"High Impact (gray, ~20% stronger and 115% stiffer than unfilled PCTG) and High Strength (black, ~45% stronger and 250% stiffer) carbon-fiber PCTG.\nProduct pages: 255C and up (they print up to 275C; 255C is a good compromise), 70-80C+ bed, about 2 mm3/s; reduce flow below 100% and add a nozzle wipe at layer change if material builds up on the nozzle.\nThis profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the nozzle toward 255C. Carbon fiber is abrasive - use a hardened nozzle. Use Magigoo or glue stick."
+	],
+	"filament_type": [
+		"PETG-CF"
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

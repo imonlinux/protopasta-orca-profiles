@@ -1,0 +1,8 @@
+# Proto-Pasta's own documents — kept locally for provenance, not redistributed
+data/tds/*.pdf
+data/tds/*.PDF
+data/sitemap*.xml
+
+# OS cruft
+.DS_Store
+dist/zip - tooling artifact

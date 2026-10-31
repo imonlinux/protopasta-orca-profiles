@@ -15,7 +15,7 @@
 		"18"
 	],
 	"filament_notes": [
-		"Matte Fiber HTPLA including wood-tone colors. Proto-Pasta data: 200C@12, 220C@18 mm3/s, 55C plate. TDS: 195C nozzle, 60C bed.\nAvoid printing below 3 mm3/s. Fiber filling is rough on PTFE tubing - replace tubing more often."
+		"Matte Fiber HTPLA, including the wood-tone colors. Material Data Table: 200C up to 12 mm3/s, 220C up to 18 mm3/s, 55C plate; avoid printing below 3 mm3/s. TDS: 195C nozzle, 60C bed. This profile uses 200C with an 18 mm3/s cap.\nRough on PTFE tubing - replace it more often. The TDS says this fiber does not need a wear-resistant nozzle. Heat treat like HTPLA (TDS: 95-110C, 10+ minutes)."
 	],
 	"hot_plate_temp": [
 		"55"

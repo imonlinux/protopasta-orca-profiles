@@ -1,0 +1,232 @@
+{
+	"name": "Protopasta",
+	"version": "02.04.00.00",
+	"force_update": "0",
+	"description": "Proto-Pasta (Protoplant) filament profiles - community-built from published Proto-Pasta data",
+	"filament_list": [
+		{
+			"name": "Protopasta PLA @base",
+			"sub_path": "filament/Protopasta PLA @base.json"
+		},
+		{
+			"name": "Protopasta PLA",
+			"sub_path": "filament/Protopasta PLA.json"
+		},
+		{
+			"name": "Protopasta HTPLA @base",
+			"sub_path": "filament/Protopasta HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta HTPLA",
+			"sub_path": "filament/Protopasta HTPLA.json"
+		},
+		{
+			"name": "Protopasta High Flow PLA @base",
+			"sub_path": "filament/Protopasta High Flow PLA @base.json"
+		},
+		{
+			"name": "Protopasta High Flow PLA",
+			"sub_path": "filament/Protopasta High Flow PLA.json"
+		},
+		{
+			"name": "Protopasta c-Matte PLA @base",
+			"sub_path": "filament/Protopasta c-Matte PLA @base.json"
+		},
+		{
+			"name": "Protopasta c-Matte PLA",
+			"sub_path": "filament/Protopasta c-Matte PLA.json"
+		},
+		{
+			"name": "Protopasta Matte Fiber HTPLA @base",
+			"sub_path": "filament/Protopasta Matte Fiber HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta Matte Fiber HTPLA",
+			"sub_path": "filament/Protopasta Matte Fiber HTPLA.json"
+		},
+		{
+			"name": "Protopasta Calcium Carbonate PLA @base",
+			"sub_path": "filament/Protopasta Calcium Carbonate PLA @base.json"
+		},
+		{
+			"name": "Protopasta Calcium Carbonate PLA",
+			"sub_path": "filament/Protopasta Calcium Carbonate PLA.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PLA @base",
+			"sub_path": "filament/Protopasta Carbon Fiber PLA @base.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PLA",
+			"sub_path": "filament/Protopasta Carbon Fiber PLA.json"
+		},
+		{
+			"name": "Protopasta Stainless Steel PLA @base",
+			"sub_path": "filament/Protopasta Stainless Steel PLA @base.json"
+		},
+		{
+			"name": "Protopasta Stainless Steel PLA",
+			"sub_path": "filament/Protopasta Stainless Steel PLA.json"
+		},
+		{
+			"name": "Protopasta Magnetic Iron PLA @base",
+			"sub_path": "filament/Protopasta Magnetic Iron PLA @base.json"
+		},
+		{
+			"name": "Protopasta Magnetic Iron PLA",
+			"sub_path": "filament/Protopasta Magnetic Iron PLA.json"
+		},
+		{
+			"name": "Protopasta High Density Iron HTPLA @base",
+			"sub_path": "filament/Protopasta High Density Iron HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta High Density Iron HTPLA",
+			"sub_path": "filament/Protopasta High Density Iron HTPLA.json"
+		},
+		{
+			"name": "Protopasta High Density Steel HTPLA @base",
+			"sub_path": "filament/Protopasta High Density Steel HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta High Density Steel HTPLA",
+			"sub_path": "filament/Protopasta High Density Steel HTPLA.json"
+		},
+		{
+			"name": "Protopasta Brass HTPLA @base",
+			"sub_path": "filament/Protopasta Brass HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta Brass HTPLA",
+			"sub_path": "filament/Protopasta Brass HTPLA.json"
+		},
+		{
+			"name": "Protopasta Bronze HTPLA @base",
+			"sub_path": "filament/Protopasta Bronze HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta Bronze HTPLA",
+			"sub_path": "filament/Protopasta Bronze HTPLA.json"
+		},
+		{
+			"name": "Protopasta Copper HTPLA @base",
+			"sub_path": "filament/Protopasta Copper HTPLA @base.json"
+		},
+		{
+			"name": "Protopasta Copper HTPLA",
+			"sub_path": "filament/Protopasta Copper HTPLA.json"
+		},
+		{
+			"name": "Protopasta Conductive PLA @base",
+			"sub_path": "filament/Protopasta Conductive PLA @base.json"
+		},
+		{
+			"name": "Protopasta Conductive PLA",
+			"sub_path": "filament/Protopasta Conductive PLA.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative PLA @base",
+			"sub_path": "filament/Protopasta Static Dissipative PLA @base.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative PLA",
+			"sub_path": "filament/Protopasta Static Dissipative PLA.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative Carbon Fiber PLA @base",
+			"sub_path": "filament/Protopasta Static Dissipative Carbon Fiber PLA @base.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative Carbon Fiber PLA",
+			"sub_path": "filament/Protopasta Static Dissipative Carbon Fiber PLA.json"
+		},
+		{
+			"name": "Protopasta PETG @base",
+			"sub_path": "filament/Protopasta PETG @base.json"
+		},
+		{
+			"name": "Protopasta PETG",
+			"sub_path": "filament/Protopasta PETG.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PETG @base",
+			"sub_path": "filament/Protopasta Carbon Fiber PETG @base.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PETG",
+			"sub_path": "filament/Protopasta Carbon Fiber PETG.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber HTPETG @base",
+			"sub_path": "filament/Protopasta Carbon Fiber HTPETG @base.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber HTPETG",
+			"sub_path": "filament/Protopasta Carbon Fiber HTPETG.json"
+		},
+		{
+			"name": "Protopasta Glass Fiber HTPETG @base",
+			"sub_path": "filament/Protopasta Glass Fiber HTPETG @base.json"
+		},
+		{
+			"name": "Protopasta Glass Fiber HTPETG",
+			"sub_path": "filament/Protopasta Glass Fiber HTPETG.json"
+		},
+		{
+			"name": "Protopasta PCTG @base",
+			"sub_path": "filament/Protopasta PCTG @base.json"
+		},
+		{
+			"name": "Protopasta PCTG",
+			"sub_path": "filament/Protopasta PCTG.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PCTG @base",
+			"sub_path": "filament/Protopasta Carbon Fiber PCTG @base.json"
+		},
+		{
+			"name": "Protopasta Carbon Fiber PCTG",
+			"sub_path": "filament/Protopasta Carbon Fiber PCTG.json"
+		},
+		{
+			"name": "Protopasta Glass Fiber PCTG @base",
+			"sub_path": "filament/Protopasta Glass Fiber PCTG @base.json"
+		},
+		{
+			"name": "Protopasta Glass Fiber PCTG",
+			"sub_path": "filament/Protopasta Glass Fiber PCTG.json"
+		},
+		{
+			"name": "Protopasta Metal Composite PETG @base",
+			"sub_path": "filament/Protopasta Metal Composite PETG @base.json"
+		},
+		{
+			"name": "Protopasta Metal Composite PETG",
+			"sub_path": "filament/Protopasta Metal Composite PETG.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative PETG @base",
+			"sub_path": "filament/Protopasta Static Dissipative PETG @base.json"
+		},
+		{
+			"name": "Protopasta Static Dissipative PETG",
+			"sub_path": "filament/Protopasta Static Dissipative PETG.json"
+		},
+		{
+			"name": "Protopasta Rigid TPU @base",
+			"sub_path": "filament/Protopasta Rigid TPU @base.json"
+		},
+		{
+			"name": "Protopasta Rigid TPU",
+			"sub_path": "filament/Protopasta Rigid TPU.json"
+		},
+		{
+			"name": "Protopasta Flexible TPU @base",
+			"sub_path": "filament/Protopasta Flexible TPU @base.json"
+		},
+		{
+			"name": "Protopasta Flexible TPU",
+			"sub_path": "filament/Protopasta Flexible TPU.json"
+		}
+	]
+}

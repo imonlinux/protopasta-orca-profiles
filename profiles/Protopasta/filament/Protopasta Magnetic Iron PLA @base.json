@@ -15,7 +15,7 @@
 		"24"
 	],
 	"filament_notes": [
-		"Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ: prints ~10C cooler than standard PLA (185-195C). Avoid printing below 3 mm3/s.\nIf warping occurs, reduce fan speed or print slower (table cap 24 mm3/s is a maximum, not a target). Ferromagnetic but not a magnet itself; rustable for aged finishes. Brittle in spool form; ~100 m per 500 g."
+		"Iron-filled PLA (45% iron by weight). FAQ: 185-195C, about 10C cooler than standard PLA. Material Data Table: 200C up to 24 mm3/s, 55C plate; avoid printing below 3 mm3/s; hard steel nozzle and gears recommended. TDS: 192C, 60C bed. This profile uses 190C with a 24 mm3/s cap - move toward 200C when printing near the cap.\nIf parts warp, Proto-Pasta suggests turning the fan off and printing slower. Ferromagnetic (sticks to magnets, but isn't a magnet). Can be rusted for an aged finish. More brittle than PLA as filament; about 100 m per 500 g."
 	],
 	"hot_plate_temp": [
 		"55"

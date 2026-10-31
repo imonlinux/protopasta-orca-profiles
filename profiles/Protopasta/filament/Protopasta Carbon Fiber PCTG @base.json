@@ -12,7 +12,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"High Impact (gray, ~20% stronger / 115% stiffer than unfilled PCTG) and High Strength (black, ~45% stronger / 250% stiffer) carbon-fiber PCTG.\nProto-Pasta publishes no numeric settings for this line; PCTG-family defaults applied. Hardened nozzle and gears required (abrasive). Use Magigoo or glue stick."
+		"High Impact (gray, ~20% stronger and 115% stiffer than unfilled PCTG) and High Strength (black, ~45% stronger and 250% stiffer) carbon-fiber PCTG.\nProduct pages: 255C and up (they print up to 275C; 255C is a good compromise), 70-80C+ bed, about 2 mm3/s; reduce flow below 100% and add a nozzle wipe at layer change if material builds up on the nozzle.\nThis profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the nozzle toward 255C. Carbon fiber is abrasive - use a hardened nozzle. Use Magigoo or glue stick."
 	],
 	"filament_type": [
 		"PETG-CF"

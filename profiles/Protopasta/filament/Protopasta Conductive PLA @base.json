@@ -15,7 +15,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Carbon-black conductive PLA (4043D base). FAQ: 215-230C, run on the hotter side for layer adhesion; TDS 210-230C, 60C plate; table 220C@6/240C@12, 55C plate.\nUse Magigoo or glue stick - prints can fuse to smooth plate surfaces when hot. Purge thoroughly on filament changes. Filament is quite flexible; printed parts are weaker along layer lines. Low-voltage circuits, touch sensors, ESD applications."
+		"Carbon-black-filled conductive PLA. FAQ: 215-230C, run on the hotter side for layer adhesion. TDS: 210-230C, 60C plate, up to 8 mm3/s, 0.4 mm or larger nozzle. Material Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate. This profile uses the table's 12 mm3/s cap; the TDS only goes up to 8 mm3/s.\nUse Magigoo or glue stick - prints can fuse to the plate. Purge extra on filament changes. The filament is fairly flexible but breaks if bent repeatedly; printed parts are weaker along layer lines. Suited to low-voltage circuits, touch sensors and ESD uses."
 	],
 	"hot_plate_temp": [
 		"55"

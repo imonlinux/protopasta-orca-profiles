@@ -1,0 +1,52 @@
+{
+	"filament_settings_id": [
+		"Protopasta Static Dissipative Carbon Fiber PLA"
+	],
+	"from": "User",
+	"inherits": "Generic PLA-CF @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Static Dissipative Carbon Fiber PLA",
+	"version": "2.4.2.0",
+	"filament_density": [
+		"1.14"
+	],
+	"filament_flow_ratio": [
+		"0.95"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"Static Dissipative Carbon Fiber PLA. TDS: 210-230C, 60C plate, up to 12 mm3/s, 0.4 mm or larger nozzle. Material Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate.\nAbrasive: hard steel nozzle and gears recommended; replace PTFE tubing more often. Use Magigoo or glue stick and purge extra on filament changes."
+	],
+	"filament_type": [
+		"PLA-CF"
+	],
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"hot_plate_temp": [
+		"55"
+	],
+	"hot_plate_temp_initial_layer": [
+		"55"
+	],
+	"nozzle_temperature": [
+		"220"
+	],
+	"nozzle_temperature_initial_layer": [
+		"220"
+	],
+	"nozzle_temperature_range_high": [
+		"240"
+	],
+	"nozzle_temperature_range_low": [
+		"210"
+	],
+	"textured_plate_temp": [
+		"55"
+	],
+	"textured_plate_temp_initial_layer": [
+		"55"
+	]
+}

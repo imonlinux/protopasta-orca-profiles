@@ -15,7 +15,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Covers Carbon Fiber PETG and Recycled Carbon Fiber PETG.\nProto-Pasta data: 250C@12 mm3/s, 80C plate. Hardened nozzle and gears required (abrasive). Use Magigoo or glue stick; purge thoroughly.\nFor the high-temperature HTPETG carbon-fiber lines see the dedicated Protopasta Carbon Fiber HTPETG profile."
+		"Covers Carbon Fiber PETG (PETG-CF7) and Recycled Carbon Fiber PETG.\nMaterial Data Table: 250C up to 12 mm3/s, 80C plate. Product page: 235C and up (they print up to 275C; 255C is a good compromise), 70C+ bed; reduce flow below 100% if material builds up on the nozzle.\nAbrasive: hard steel nozzle and gears recommended; replace PTFE tubing more often. Use Magigoo or glue stick. For the HTPETG lines, use the Protopasta Carbon Fiber HTPETG profile instead."
 	],
 	"filament_type": [
 		"PETG-CF"

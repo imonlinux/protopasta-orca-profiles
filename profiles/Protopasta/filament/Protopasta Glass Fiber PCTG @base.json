@@ -1,0 +1,41 @@
+{
+	"type": "filament",
+	"name": "Protopasta Glass Fiber PCTG @base",
+	"inherits": "fdm_filament_pctg",
+	"from": "system",
+	"filament_id": "PPF024",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_max_volumetric_speed": [
+		"12"
+	],
+	"filament_notes": [
+		"White Glass Fiber PCTG - stiff like PLA, durable like PCTG (~75% stiffer than unfilled PCTG).\nProduct page: 255C and up (they print up to 275C; 255C is a good compromise), 70-80C+ bed, about 2 mm3/s; reduce flow below 100% and add a nozzle wipe at layer change if material builds up on the nozzle.\nThis profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the nozzle toward 255C. Glass fiber is abrasive - use a hardened nozzle. Use Magigoo or glue stick."
+	],
+	"hot_plate_temp": [
+		"80"
+	],
+	"hot_plate_temp_initial_layer": [
+		"80"
+	],
+	"nozzle_temperature": [
+		"250"
+	],
+	"nozzle_temperature_initial_layer": [
+		"250"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"textured_plate_temp": [
+		"80"
+	],
+	"textured_plate_temp_initial_layer": [
+		"80"
+	]
+}

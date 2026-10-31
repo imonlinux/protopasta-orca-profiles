@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 """Generate OrcaSlicer filament profiles for the Proto-Pasta catalog.
 
-Data sources are documented per-material in docs/SOURCES.md and in each
-profile's filament_notes. Values come from Proto-Pasta's published Material
-Data Table (proto-pasta.com/pages/material-data-table), TDS/SDS documents,
-per-material FAQ pages, and product pages. Where Proto-Pasta publishes no
-numbers for a line, the profile inherits Orca's Generic family defaults and
-says so in its notes - nothing is invented.
+Where each value comes from is documented in docs/SOURCES.md and in each
+profile's filament_notes. Sources are Proto-Pasta's Material Data Table
+(proto-pasta.com/pages/material-data-table), their TDS/SDS documents, their
+FAQ pages, product pages and launch articles. Where Proto-Pasta publishes no
+number for a setting, the profile either inherits Orca's Generic value or
+borrows Proto-Pasta's number for the closest related material, and the notes
+say which.
 
 Granularity rule (see README): one profile per filament type, plus one per
-notable variation within the type (differing temps/flow/bed/density/type tag/
-hardware requirements). Colorways and recycled variants fold into the parent
-profile's notes, never separate profiles.
+notable variation within the type (different temperatures, flow, bed,
+density, type tag or hardware needs). Colorways and recycled versions are
+listed in the parent profile's notes, never given their own profile.
 
-Usage: python3 scripts/generate_profiles.py   (from repo root)
-Writes: profiles/Protopasta.json + profiles/Protopasta/filament/*.json
+Usage (from the repo root):  python3 scripts/generate_profiles.py
+Writes: profiles/Protopasta.json, profiles/Protopasta/filament/*.json and
+user_presets/*.json. It does NOT rebuild the zips in dist/.
 """
 
 import json
@@ -32,15 +34,16 @@ OUT_DIR = REPO / "profiles" / VENDOR / "filament"
 # ---------------------------------------------------------------------------
 # Material table.
 #
-# nozzle encoding of Proto-Pasta's "Temp @ Max Vol" guidance: their data pairs
-# a temperature with a volumetric flow (e.g. 220C@6, 240C@12 mm3/s). Profiles
-# default to the LOW temperature (best surface quality, their stated
-# preference for "lowest possible temperature"), keep the high-flow cap as
-# filament_max_volumetric_speed, and the notes tell the user which temperature
-# to move to at high flow. range_low/range_high bracket everything published.
+# Proto-Pasta's "Temp @ Max Vol" data pairs a nozzle temperature with a
+# volumetric flow (e.g. 220C up to 6 mm3/s, 240C up to 12 mm3/s). A static
+# profile holds one temperature, so profiles use the LOW temperature as the
+# default, use the HIGH flow as filament_max_volumetric_speed (the cap), and
+# the notes tell the user to raise the temperature when printing near the
+# cap. range_low/range_high span every temperature Proto-Pasta publishes.
 #
-# density: g/cm3 from TDS/SDS where published (see docs/SOURCES.md).
-# bed: Proto-Pasta plate temperature -> hot + textured plate fields.
+# density: g/cm3, from the TDS/SDS where published (see docs/SOURCES.md).
+# bed: written to the hot-plate and textured-plate fields only; other plate
+#      types keep Orca's inherited values.
 # ---------------------------------------------------------------------------
 M = []
 
@@ -63,10 +66,12 @@ mat(
     id="PPF001", name="Protopasta PLA", inherits="fdm_filament_pla",
     nozzle=220, range_low=195, range_high=240, mvs=12, bed=55, density=1.24,
     notes=(
-        "Covers Back to Basics PLA (Ingeo 4043D) and Recycled PLA.\n"
-        "Proto-Pasta data: 220C suits ~6 mm3/s; raise toward 240C when printing at the "
-        "full 12 mm3/s cap. Getting-started range: 195-225C nozzle, 50-60C bed.\n"
-        "Dry below 50C if needed; printing without drying is normally fine."
+        "Covers Back to Basics PLA and Recycled PLA.\n"
+        "Material Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate. "
+        "This profile uses 220C with a 12 mm3/s cap - raise toward 240C when printing "
+        "near the cap. Getting-started page: 195-225C nozzle, 50-60C bed.\n"
+        "Proto-Pasta finds PLA normally prints fine without drying; if you do dry it, "
+        "stay below 50C."
     ),
 )
 
@@ -74,14 +79,19 @@ mat(
     id="PPF002", name="Protopasta HTPLA", inherits="fdm_filament_pla",
     nozzle=220, range_low=195, range_high=240, mvs=12, bed=55, density=1.24,
     notes=(
-        "Covers Premium HTPLA v3, High Temp PLA v2 and all color lines "
-        "(opaque, translucent, metallic, glitter, fluorescent, Quantum Dot, glow).\n"
-        "220C suits ~6 mm3/s; raise toward 240C at 12 mm3/s (240C also improves layer "
-        "fusion). Quantum Dot TDS: 220-240C nozzle, 55-65C bed.\n"
-        "Anneal for heat resistance up to ~140-155C (vs ~55-60C as printed): oven at "
-        "85-115C for 5-60 min, ideally buried in silica sand or submerged in gel; treat "
-        "with supports on.\n"
-        "Prusa MK2/MK3 stock heatbreak: 235-240C helps avoid heat-creep jams."
+        "Covers Premium HTPLA v3, High Temp PLA v2 and the color lines (opaque, "
+        "translucent, metallic, glitter, fluorescent, multicolor, glow) plus Quantum "
+        "Dot HTPLA.\n"
+        "Material Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate. "
+        "This profile uses 220C with a 12 mm3/s cap - raise toward 240C when printing "
+        "near the cap. Quantum Dot TDS: 220-240C nozzle, 55-65C bed.\n"
+        "Heat treating (after printing): TDS says 95-110C for 10+ minutes; the HTPLA "
+        "FAQ says 95-120C, usually about 10 minutes, on a flat wood or silicone "
+        "surface. Parts shrink, so scale them up in the slicer first. Heat-treated "
+        "HTPLA holds its shape to roughly 140-155C.\n"
+        "Prusa MK2/MK3 with the stock heatbreak: Proto-Pasta says 235-240C can help "
+        "avoid jams at the heatbreak ledge, but recommends a different hotend as the "
+        "better fix."
     ),
 )
 
@@ -89,7 +99,9 @@ mat(
     id="PPF003", name="Protopasta High Flow PLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=18, bed=45, density=1.24,
     notes=(
-        "HFPLA. Proto-Pasta data: 200C@12, 220C@18 mm3/s, 45C plate.\n"
+        "High Flow PLA (HFPLA). Material Data Table: 200C up to 12 mm3/s, 220C up to "
+        "18 mm3/s, 45C plate. This profile uses 200C with an 18 mm3/s cap - raise "
+        "toward 220C when printing near the cap.\n"
         "Let the plate cool below 40C before removing prints."
     ),
 )
@@ -98,8 +110,9 @@ mat(
     id="PPF004", name="Protopasta c-Matte PLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=18, bed=45, density=1.3,
     notes=(
-        "c-Matte PLA (calcium-carbonate matte finish). Proto-Pasta data: "
-        "200C@12, 220C@18 mm3/s, 45C plate.\n"
+        "c-Matte PLA (matte finish). Material Data Table: 200C up to 12 mm3/s, 220C up "
+        "to 18 mm3/s, 45C plate. This profile uses 200C with an 18 mm3/s cap - raise "
+        "toward 220C when printing near the cap. Density 1.3 g/cm3 per SDS.\n"
         "Let the plate cool below 40C before removing prints."
     ),
 )
@@ -108,10 +121,13 @@ mat(
     id="PPF005", name="Protopasta Matte Fiber HTPLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=18, bed=55, density=1.14,
     notes=(
-        "Matte Fiber HTPLA including wood-tone colors. Proto-Pasta data: "
-        "200C@12, 220C@18 mm3/s, 55C plate. TDS: 195C nozzle, 60C bed.\n"
-        "Avoid printing below 3 mm3/s. Fiber filling is rough on PTFE tubing - "
-        "replace tubing more often."
+        "Matte Fiber HTPLA, including the wood-tone colors. Material Data Table: 200C "
+        "up to 12 mm3/s, 220C up to 18 mm3/s, 55C plate; avoid printing below "
+        "3 mm3/s. TDS: 195C nozzle, 60C bed. This profile uses 200C with an 18 mm3/s "
+        "cap.\n"
+        "Rough on PTFE tubing - replace it more often. The TDS says this fiber does "
+        "not need a wear-resistant nozzle. Heat treat like HTPLA (TDS: 95-110C, 10+ "
+        "minutes)."
     ),
 )
 
@@ -119,9 +135,10 @@ mat(
     id="PPF006", name="Protopasta Calcium Carbonate PLA", inherits="fdm_filament_pla",
     nozzle=220, range_low=195, range_high=240, mvs=12, bed=55, density=1.5,
     notes=(
-        "CaCO3 composite PLA. Proto-Pasta's table lists no dedicated temps for this "
-        "line - use PLA-family defaults (220C@6, 240C@12 mm3/s, 55C plate). "
-        "Density 1.5 g/cm3 per SDS."
+        "Calcium-carbonate-filled PLA. The Material Data Table lists this line but "
+        "gives no temperatures, so this profile borrows Proto-Pasta's standard PLA "
+        "numbers (220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate). Density "
+        "1.5 g/cm3 per SDS."
     ),
 )
 
@@ -130,13 +147,16 @@ mat(
     filament_type="PLA-CF", flow_ratio=0.95,
     nozzle=210, range_low=195, range_high=240, mvs=12, bed=55, density=1.3,
     notes=(
-        "15% chopped-carbon-fiber PLA/HTPLA; covers Carbon Fiber PLA, High Temp CF PLA "
-        "and Recycled CF PLA.\n"
-        "FAQ range 195-220C (TDS 205C); Material Data Table: 220C@6, 240C@12 mm3/s, 55C "
-        "plate. Hardened nozzle and drive gears recommended - fiber is abrasive. "
-        "Proto-Pasta cites good results with 0.5 mm nozzles and spring-loaded "
-        "direct-drive extruders. Filament is brittle in spool form - avoid sharp bends.\n"
-        "Recycled variant prints the same."
+        "15% (by weight) chopped carbon fiber in PLA or HTPLA; covers Carbon Fiber "
+        "PLA, Carbon Fiber HTPLA and Recycled Carbon Fiber PLA.\n"
+        "FAQ: 195-220C. TDS: 205C, 60C bed. Material Data Table: 220C up to 6 mm3/s, "
+        "240C up to 12 mm3/s, 55C plate. This profile uses 210C with a 12 mm3/s cap "
+        "- raise the temperature when printing near the cap.\n"
+        "Abrasive: Proto-Pasta recommends a hard steel nozzle and gears, and "
+        "replacing PTFE tubing more often. They report good results with a 0.5 mm "
+        "nozzle and a spring-loaded direct-drive extruder. Brittle as filament - "
+        "avoid sharp bends. Density: TDS and FAQ say 1.3 g/cm3 (used here); the SDS "
+        "says 1.15."
     ),
 )
 
@@ -144,11 +164,12 @@ mat(
     id="PPF008", name="Protopasta Stainless Steel PLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=24, bed=55, density=2.3,
     notes=(
-        "Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ range 195-220C "
-        "(215C cited with a 0.5 mm nozzle). Avoid printing below 3 mm3/s.\n"
-        "Dense (2.3 g/cm3, ~90 m per 500 g) and brittle in spool form. Hardened brass "
-        "or steel nozzle recommended for wear. Finish by wire brushing, tumbling, or "
-        "buffing with compound."
+        "Steel-filled PLA. Material Data Table: 200C up to 24 mm3/s, 55C plate; avoid "
+        "printing below 3 mm3/s; hard steel nozzle and gears recommended. FAQ: "
+        "195-220C (215C with a 0.5 mm nozzle). TDS: 198C, 60C bed.\n"
+        "Dense (about 2.3 g/cm3; about 90 m per 500 g) and more brittle than PLA as "
+        "filament. Finish by wire brushing, tumbling, or wheel polishing with "
+        "compound."
     ),
 )
 
@@ -156,11 +177,14 @@ mat(
     id="PPF009", name="Protopasta Magnetic Iron PLA", inherits="fdm_filament_pla",
     nozzle=190, range_low=185, range_high=220, mvs=24, bed=55, density=1.85,
     notes=(
-        "Proto-Pasta data: 200C@24 mm3/s, 55C plate; FAQ: prints ~10C cooler than "
-        "standard PLA (185-195C). Avoid printing below 3 mm3/s.\n"
-        "If warping occurs, reduce fan speed or print slower (table cap 24 mm3/s is a "
-        "maximum, not a target). Ferromagnetic but not a magnet itself; rustable for "
-        "aged finishes. Brittle in spool form; ~100 m per 500 g."
+        "Iron-filled PLA (45% iron by weight). FAQ: 185-195C, about 10C cooler than "
+        "standard PLA. Material Data Table: 200C up to 24 mm3/s, 55C plate; avoid "
+        "printing below 3 mm3/s; hard steel nozzle and gears recommended. TDS: 192C, "
+        "60C bed. This profile uses 190C with a 24 mm3/s cap - move toward 200C when "
+        "printing near the cap.\n"
+        "If parts warp, Proto-Pasta suggests turning the fan off and printing slower. "
+        "Ferromagnetic (sticks to magnets, but isn't a magnet). Can be rusted for an "
+        "aged finish. More brittle than PLA as filament; about 100 m per 500 g."
     ),
 )
 
@@ -168,12 +192,13 @@ mat(
     id="PPF010", name="Protopasta High Density Iron HTPLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=24, bed=55, density=2.4,
     notes=(
-        "60% iron by weight. Proto-Pasta publishes no TDS for this line; settings "
-        "follow their metal-composite row (200C@24 mm3/s, 55C plate) and density is "
-        "estimated at ~2x base polymer from their published description - verify by "
-        "weighing a known length.\n"
-        "Avoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in spool "
-        "form. Anneal like HTPLA for heat resistance."
+        "High Density Iron HTPLA: 60% iron by weight. No TDS is published. "
+        "Proto-Pasta's launch article (Endless Exploration EX10) printed it at 200C "
+        "at up to 24 mm3/s with a 0.4 mm steel nozzle. The 55C plate and the 'avoid "
+        "below 3 mm3/s' advice are borrowed from their other metal-composite rows. "
+        "Density 2.4 g/cm3 is an estimate - verify by weighing a known length.\n"
+        "Hardened nozzle recommended. Heat treat at 100C for 10+ minutes for heat "
+        "resistance up to about 150C; expect some shrinkage."
     ),
 )
 
@@ -181,11 +206,14 @@ mat(
     id="PPF011", name="Protopasta High Density Steel HTPLA", inherits="fdm_filament_pla",
     nozzle=200, range_low=190, range_high=220, mvs=24, bed=55, density=2.4,
     notes=(
-        "High-density steel-filled HTPLA. Proto-Pasta publishes no TDS for this line; "
-        "settings follow their metal-composite row (200C@24 mm3/s, 55C plate) and "
-        "density is estimated - verify by weighing a known length.\n"
-        "Avoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in spool "
-        "form. Anneal like HTPLA for heat resistance."
+        "High Density Steel HTPLA: 70% 400-series stainless steel by weight. No TDS "
+        "is published. Proto-Pasta's launch article (Endless Exploration EX10) "
+        "printed it at 200C at up to 24 mm3/s with a 0.4 mm steel nozzle. The 55C "
+        "plate and the 'avoid below 3 mm3/s' advice are borrowed from their other "
+        "metal-composite rows. Density 2.4 g/cm3 is a rough estimate and probably "
+        "low for 70% steel - verify by weighing a known length.\n"
+        "Hardened nozzle recommended. Heat treat at 100C for 10+ minutes for heat "
+        "resistance up to about 150C; expect some shrinkage."
     ),
 )
 
@@ -195,12 +223,11 @@ for idx, metal in enumerate(("Brass", "Bronze", "Copper")):
         name=f"Protopasta {metal} HTPLA", inherits="fdm_filament_pla",
         nozzle=200, range_low=190, range_high=220, mvs=24, bed=55, density=2.3,
         notes=(
-            f"{metal}-filled metal-composite HTPLA. Proto-Pasta data: "
-            "200C@24 mm3/s, 55C plate; TDS 195C nozzle, 60C bed, density ~2.3 g/cm3 "
-            "(~90-100 m per 500 g).\n"
-            "Avoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in "
-            "spool form. Polish by sanding/burnishing for real-metal luster; anneal "
-            "like HTPLA for heat resistance."
+            f"{metal}-filled HTPLA. Material Data Table: 200C up to 24 mm3/s, 55C "
+            "plate; avoid printing below 3 mm3/s; hard steel nozzle and gears "
+            "recommended. TDS: 195C nozzle, 60C bed, density about 2.3 g/cm3 (the SDS "
+            "says 2.5), about 97 m per 500 g.\n"
+            "Heat treat like HTPLA (TDS: 95-110C, 10+ minutes) to firm up parts."
         ),
     )
 
@@ -208,13 +235,15 @@ mat(
     id="PPF015", name="Protopasta Conductive PLA", inherits="fdm_filament_pla",
     nozzle=220, range_low=210, range_high=240, mvs=12, bed=55, density=1.24,
     notes=(
-        "Carbon-black conductive PLA (4043D base). FAQ: 215-230C, run on the hotter "
-        "side for layer adhesion; TDS 210-230C, 60C plate; table 220C@6/240C@12, 55C "
-        "plate.\n"
-        "Use Magigoo or glue stick - prints can fuse to smooth plate surfaces when "
-        "hot. Purge thoroughly on filament changes. Filament is quite flexible; "
-        "printed parts are weaker along layer lines. Low-voltage circuits, touch "
-        "sensors, ESD applications."
+        "Carbon-black-filled conductive PLA. FAQ: 215-230C, run on the hotter side "
+        "for layer adhesion. TDS: 210-230C, 60C plate, up to 8 mm3/s, 0.4 mm or "
+        "larger nozzle. Material Data Table: 220C up to 6 mm3/s, 240C up to "
+        "12 mm3/s, 55C plate. This profile uses the table's 12 mm3/s cap; the TDS "
+        "only goes up to 8 mm3/s.\n"
+        "Use Magigoo or glue stick - prints can fuse to the plate. Purge extra on "
+        "filament changes. The filament is fairly flexible but breaks if bent "
+        "repeatedly; printed parts are weaker along layer lines. Suited to "
+        "low-voltage circuits, touch sensors and ESD uses."
     ),
 )
 
@@ -222,8 +251,11 @@ mat(
     id="PPF016", name="Protopasta Static Dissipative PLA", inherits="fdm_filament_pla",
     nozzle=220, range_low=210, range_high=240, mvs=12, bed=55, density=1.24,
     notes=(
-        "SD PLA. TDS: 210-230C nozzle, 60C plate; table 220C@6/240C@12, 55C plate.\n"
-        "Use Magigoo or glue stick and purge thoroughly on changes."
+        "Static Dissipative PLA. TDS: 210-230C, 60C plate, up to 12 mm3/s, 0.4 mm or "
+        "larger nozzle. Material Data Table: 220C up to 6 mm3/s, 240C up to "
+        "12 mm3/s, 55C plate.\n"
+        "Use Magigoo or glue stick so prints don't fuse to the plate; purge extra on "
+        "filament changes."
     ),
 )
 
@@ -232,10 +264,11 @@ mat(
     inherits="fdm_filament_pla", filament_type="PLA-CF", flow_ratio=0.95,
     nozzle=220, range_low=210, range_high=240, mvs=12, bed=55, density=1.14,
     notes=(
-        "SD CF PLA. TDS: 210-230C nozzle, 60C plate; table 220C@6/240C@12, 55C "
-        "plate.\n"
-        "Hardened nozzle and gears recommended (abrasive). Use Magigoo or glue stick "
-        "and purge thoroughly on changes."
+        "Static Dissipative Carbon Fiber PLA. TDS: 210-230C, 60C plate, up to "
+        "12 mm3/s, 0.4 mm or larger nozzle. Material Data Table: 220C up to 6 mm3/s, "
+        "240C up to 12 mm3/s, 55C plate.\n"
+        "Abrasive: hard steel nozzle and gears recommended; replace PTFE tubing more "
+        "often. Use Magigoo or glue stick and purge extra on filament changes."
     ),
 )
 
@@ -246,9 +279,8 @@ mat(
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80, density=1.2,
     notes=(
         "Covers Simply PETG colors, translucent PETG and Recycled PETG.\n"
-        "Proto-Pasta data: 250C@12 mm3/s, 80C plate. Use Magigoo or glue stick to "
-        "avoid fusing to smooth build surfaces. Dry below 65C if needed.\n"
-        "Lower nozzle temperature reduces stringing on the metal-composite PETGs."
+        "Material Data Table: 250C up to 12 mm3/s, 80C plate. Use Magigoo or glue "
+        "stick so prints don't fuse to the plate. If you dry it, stay below 65C."
     ),
 )
 
@@ -257,11 +289,13 @@ mat(
     filament_type="PETG-CF", flow_ratio=0.95,
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80, density=1.2,
     notes=(
-        "Covers Carbon Fiber PETG and Recycled Carbon Fiber PETG.\n"
-        "Proto-Pasta data: 250C@12 mm3/s, 80C plate. Hardened nozzle and gears "
-        "required (abrasive). Use Magigoo or glue stick; purge thoroughly.\n"
-        "For the high-temperature HTPETG carbon-fiber lines see the dedicated "
-        "Protopasta Carbon Fiber HTPETG profile."
+        "Covers Carbon Fiber PETG (PETG-CF7) and Recycled Carbon Fiber PETG.\n"
+        "Material Data Table: 250C up to 12 mm3/s, 80C plate. Product page: 235C and "
+        "up (they print up to 275C; 255C is a good compromise), 70C+ bed; reduce flow "
+        "below 100% if material builds up on the nozzle.\n"
+        "Abrasive: hard steel nozzle and gears recommended; replace PTFE tubing more "
+        "often. Use Magigoo or glue stick. For the HTPETG lines, use the Protopasta "
+        "Carbon Fiber HTPETG profile instead."
     ),
 )
 
@@ -270,13 +304,16 @@ mat(
     filament_type="PETG-CF", flow_ratio=0.95,
     nozzle=260, range_low=240, range_high=300, mvs=12, bed=100,
     notes=(
-        "High Strength (black, higher CF) and High Impact (galaxy black, lower CF) "
-        "carbon-fiber HTPETG. ABS/ASA-level heat resistance without fumes.\n"
-        "Product page: nozzle up to 300C - higher temps improve layer adhesion but "
-        "risk overheating when printing slow. Bed from 100C up prints flat. Consider "
-        "flow below 100% and a nozzle-wipe-at-layer-change gcode to limit buildup; "
-        "drying may not fully resolve nozzle stick.\n"
-        "Hardened nozzle and gears required (abrasive). Use Magigoo or glue stick."
+        "High Strength (black, more carbon fiber) and High Impact (Galaxy Black, less "
+        "carbon fiber) HTPETG, with ABS/ASA-level heat resistance.\n"
+        "Product pages: nozzle up to 300C (hotter improves layer adhesion but risks "
+        "overheating when printing slowly), bed 100C+, flow below 100% and a nozzle "
+        "wipe at layer change to limit buildup. Proto-Pasta's launch article (EX14) "
+        "printed at 300C and chose 6 mm3/s for a full melt. This profile's 260C with "
+        "a 12 mm3/s cap is our own middle-ground choice, not a Proto-Pasta number.\n"
+        "Dry before printing (wet filament causes nozzle buildup). Hard steel nozzle "
+        "required (abrasive). EX14 also turned auxiliary and chamber fans off and "
+        "used glue stick."
     ),
 )
 
@@ -284,12 +321,14 @@ mat(
     id="PPF021", name="Protopasta Glass Fiber HTPETG", inherits="fdm_filament_pet",
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80,
     notes=(
-        "Glass Fiber HTPETG (Highfive Blue, White).\n"
-        "Proto-Pasta publishes no numeric settings for this line; PETG-family "
-        "defaults applied (250C@12 mm3/s, 80C plate). Stiff like PLA, durable like "
-        "PETG, higher temperature resistance than GF PCTG.\n"
-        "Glass fiber is abrasive - hardened nozzle recommended. Use Magigoo or glue "
-        "stick."
+        "Glass Fiber HTPETG (White, Highfive Blue). Product page: same guidance as "
+        "the carbon-fiber HTPETG - nozzle up to 300C, bed 100C+, flow below 100% and "
+        "a nozzle wipe at layer change to limit buildup. Higher heat resistance than "
+        "Glass Fiber PCTG.\n"
+        "This profile still uses Proto-Pasta's standard PETG numbers (250C, 80C "
+        "plate, 12 mm3/s cap), which are below the product page's guidance - expect "
+        "to raise the nozzle and bed temperatures.\n"
+        "Dry before printing. Hard steel nozzle required (abrasive). Use glue stick."
     ),
 )
 
@@ -298,8 +337,11 @@ mat(
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80,
     notes=(
         "Clear PCTG.\n"
-        "Proto-Pasta publishes no numeric settings for this line; PCTG-family "
-        "defaults applied. Use Magigoo or glue stick."
+        "Product page: start from a Generic PETG or PCTG profile; 255C and up (they "
+        "print up to 275C; 255C is a good compromise), 80C+ bed, about 2 mm3/s; reduce "
+        "flow below 100% if material builds up on the nozzle.\n"
+        "This profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the "
+        "nozzle toward 255C. Use Magigoo or glue stick."
     ),
 )
 
@@ -308,11 +350,14 @@ mat(
     filament_type="PETG-CF", flow_ratio=0.95,
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80,
     notes=(
-        "High Impact (gray, ~20% stronger / 115% stiffer than unfilled PCTG) and High "
-        "Strength (black, ~45% stronger / 250% stiffer) carbon-fiber PCTG.\n"
-        "Proto-Pasta publishes no numeric settings for this line; PCTG-family "
-        "defaults applied. Hardened nozzle and gears required (abrasive). Use Magigoo "
-        "or glue stick."
+        "High Impact (gray, ~20% stronger and 115% stiffer than unfilled PCTG) and "
+        "High Strength (black, ~45% stronger and 250% stiffer) carbon-fiber PCTG.\n"
+        "Product pages: 255C and up (they print up to 275C; 255C is a good "
+        "compromise), 70-80C+ bed, about 2 mm3/s; reduce flow below 100% and add a "
+        "nozzle wipe at layer change if material builds up on the nozzle.\n"
+        "This profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the "
+        "nozzle toward 255C. Carbon fiber is abrasive - use a hardened nozzle. Use "
+        "Magigoo or glue stick."
     ),
 )
 
@@ -321,10 +366,13 @@ mat(
     nozzle=250, range_low=230, range_high=270, mvs=12, bed=80,
     notes=(
         "White Glass Fiber PCTG - stiff like PLA, durable like PCTG (~75% stiffer "
-        "than unfilled), layer-hiding texture.\n"
-        "Proto-Pasta publishes no numeric settings for this line; PCTG-family "
-        "defaults applied. Glass fiber is abrasive - hardened nozzle recommended. "
-        "Use Magigoo or glue stick."
+        "than unfilled PCTG).\n"
+        "Product page: 255C and up (they print up to 275C; 255C is a good "
+        "compromise), 70-80C+ bed, about 2 mm3/s; reduce flow below 100% and add a "
+        "nozzle wipe at layer change if material builds up on the nozzle.\n"
+        "This profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the "
+        "nozzle toward 255C. Glass fiber is abrasive - use a hardened nozzle. Use "
+        "Magigoo or glue stick."
     ),
 )
 
@@ -332,13 +380,14 @@ mat(
     id="PPF025", name="Protopasta Metal Composite PETG", inherits="fdm_filament_pet",
     nozzle=245, range_low=230, range_high=270, mvs=12, bed=80, density=2.4,
     notes=(
-        "Copper, Steel and Iron composite PETG. PETG properties with real metal "
-        "powder; iron version is 60% iron by weight (density ~2x PETG, so a given "
-        "weight prints ~half the length). Copper/steel densities not published - the "
-        "2.4 g/cm3 default reflects the iron version.\n"
-        "Prints like PETG; a slightly lower nozzle temperature reduces stringing "
-        "(default set to 245C). Hardened nozzle recommended. Brittle in spool form; "
-        "ferrous versions rustable for aged finishes."
+        "Copper, Steel (400-series stainless) and Iron composite PETG, each 60% metal "
+        "by weight. Proto-Pasta: density about 2x PETG, so a spool gives about half "
+        "the length. This profile uses 2.4 g/cm3 for all three - an estimate.\n"
+        "Prints like PETG (Proto-Pasta used Generic PETG temperatures); a slightly "
+        "lower nozzle temperature reduces stringing, so this profile defaults to "
+        "245C. Avoid very low volume rates (below 2 mm3/s), and lower the temperature "
+        "if you must print slowly. Use glue stick. A hardened nozzle is a good idea "
+        "for metal-filled filament."
     ),
 )
 
@@ -346,10 +395,11 @@ mat(
     id="PPF026", name="Protopasta Static Dissipative PETG", inherits="fdm_filament_pet",
     nozzle=250, range_low=250, range_high=290, mvs=12, bed=80, density=1.2,
     notes=(
-        "SD PETG. TDS: 250-290C nozzle, 70-80C plate; Material Data Table: "
-        "250C@12 mm3/s, 80C plate.\n"
-        "Use Magigoo or glue stick to avoid fusing to smooth build surfaces; purge "
-        "thoroughly on changes."
+        "Static Dissipative PETG. TDS: 250-290C, 70-80C plate, up to 8 mm3/s, 0.4 mm "
+        "or larger nozzle; drying highly recommended (65C for 6 hours). Material Data "
+        "Table: 250C up to 12 mm3/s, 80C plate. This profile uses the table's "
+        "12 mm3/s cap; the TDS only goes up to 8 mm3/s.\n"
+        "Use Magigoo or glue stick so prints don't fuse to the plate."
     ),
 )
 
@@ -358,22 +408,24 @@ mat(
 mat(
     id="PPF027", name="Protopasta Rigid TPU", inherits="fdm_filament_tpu",
     notes=(
-        "Approx. 70D rigid TPU (clear; replaces earlier White Rigid TPU). Line now "
-        "discontinued but profiles are kept for existing stock.\n"
-        "Proto-Pasta publishes no numeric settings for TPU; Orca Generic TPU "
-        "defaults applied. Reduce retraction and speed for best results on Bowden "
-        "setups."
+        "Clear Rigid TPU, about 70D (replaced the earlier White Rigid TPU). "
+        "Discontinued; kept for existing stock.\n"
+        "Product page: start printing at 240C, no bed heat needed; prep the bed with "
+        "Magigoo to avoid a permanent bond; drying overnight recommended. This "
+        "profile sets no values of its own and inherits Orca's Generic TPU values "
+        "(240C nozzle, 35C bed, 3.2 mm3/s cap)."
     ),
 )
 
 mat(
     id="PPF028", name="Protopasta Flexible TPU", inherits="fdm_filament_tpu",
     notes=(
-        "Approx. 98A flexible TPU (clear; Recycled Black Flexible TPU prints the "
-        "same).\n"
-        "Proto-Pasta publishes no numeric settings for TPU; Orca Generic TPU "
-        "defaults applied. Prefer direct-drive extruders, slow down and minimize "
-        "retraction for clean surfaces."
+        "Clear Flexible TPU, about 98A; also covers Recycled Black Flexible TPU.\n"
+        "Product page: start printing at 240C, no bed heat needed; prep the bed with "
+        "Magigoo to avoid a permanent bond; drying overnight recommended. This "
+        "profile sets no values of its own and inherits Orca's Generic TPU values "
+        "(240C nozzle, 35C bed, 3.2 mm3/s cap). Direct-drive extruders, slow speeds "
+        "and short retraction work best for flexible TPU."
     ),
 )
 
@@ -432,11 +484,9 @@ def system_profile(m, sid):
         "from": "system",
         "setting_id": sid,
         "instantiation": "true",
-        # Explicit "compatible with every printer". Orca's bundle importer
-        # filters profiles against installed printers; an absent key can be
-        # treated as printer-scoped and rejected with "printer not
-        # installed". Empty list + empty condition is the universal form
-        # Orca's own bundled profiles use (e.g. Generic PLA-CF @System).
+        # Explicit "compatible with every printer": an empty list, the form
+        # OrcaFilamentLibrary's own @System profiles use (e.g. Generic PLA
+        # @System). The empty condition string makes it doubly explicit.
         "compatible_printers": [],
         "compatible_printers_condition": "",
     }
@@ -446,10 +496,11 @@ def system_profile(m, sid):
 
 # User presets cannot inherit the library's internal base names (Orca logs
 # "can not find parent fdm_filament_pla" and skips the file). They must
-# inherit the INSTANTIATED system profiles, whose names carry the @System
-# suffix (verified against a working user preset on Orca 2.4.2:
-# "inherits": "Generic TPU @System"). Requires Orca 2.4+ naming; on older
-# versions use the vendor bundle instead.
+# inherit the selectable Generic profiles, whose names end in "@System"
+# (tested on Orca 2.4.2; these names exist in OrcaFilamentLibrary from
+# Orca 2.3.0 onward). Note: Orca has no "Generic PCTG-CF", so Carbon Fiber
+# PCTG's user preset inherits Generic PETG-CF @System, while its vendor-bundle
+# @base inherits fdm_filament_pctg.
 GENERIC_SYSTEM = {
     "pla": "Generic PLA @System",
     "pla_cf": "Generic PLA-CF @System",
@@ -474,11 +525,13 @@ def user_inherits(m):
 def user_preset(m):
     """Flat user-preset variant of a profile.
 
-    Same authored values as the @base file, but in the format OrcaSlicer
-    stores/loads user presets in (from: "User"), inheriting the matching
-    instantiated Generic system profile. These import via File ->
-    Import -> Import configs, or can be dropped into Orca's user preset
-    folder.
+    Same values as the @base file plus the flow ratio, but in the format
+    OrcaSlicer stores user presets in (from: "User"), inheriting the matching
+    Generic @System profile. Any setting this file doesn't set comes from that
+    Generic profile, so it can differ slightly from the vendor bundle (e.g.
+    Generic PETG-CF @System sets its own fan speeds). These import via
+    File -> Import -> Import Configs, or can be copied into Orca's user
+    preset folder.
     """
     d = {
         "filament_settings_id": [m["name"]],

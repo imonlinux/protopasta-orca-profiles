@@ -15,7 +15,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Covers Simply PETG colors, translucent PETG and Recycled PETG.\nProto-Pasta data: 250C@12 mm3/s, 80C plate. Use Magigoo or glue stick to avoid fusing to smooth build surfaces. Dry below 65C if needed.\nLower nozzle temperature reduces stringing on the metal-composite PETGs."
+		"Covers Simply PETG colors, translucent PETG and Recycled PETG.\nMaterial Data Table: 250C up to 12 mm3/s, 80C plate. Use Magigoo or glue stick so prints don't fuse to the plate. If you dry it, stay below 65C."
 	],
 	"hot_plate_temp": [
 		"80"

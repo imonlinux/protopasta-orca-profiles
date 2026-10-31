@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Flexible TPU",
+	"inherits": "Protopasta Flexible TPU @base",
+	"from": "system",
+	"setting_id": "TZIHCE3B47WhRi9W",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

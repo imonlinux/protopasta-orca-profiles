@@ -1,0 +1,16 @@
+{
+	"filament_settings_id": [
+		"Protopasta Flexible TPU"
+	],
+	"from": "User",
+	"inherits": "Generic TPU @System",
+	"is_custom_defined": "0",
+	"name": "Protopasta Flexible TPU",
+	"version": "2.4.2.0",
+	"filament_notes": [
+		"Clear Flexible TPU, about 98A; also covers Recycled Black Flexible TPU.\nProduct page: start printing at 240C, no bed heat needed; prep the bed with Magigoo to avoid a permanent bond; drying overnight recommended. This profile sets no values of its own and inherits Orca's Generic TPU values (240C nozzle, 35C bed, 3.2 mm3/s cap). Direct-drive extruders, slow speeds and short retraction work best for flexible TPU."
+	],
+	"filament_vendor": [
+		"Protopasta"
+	]
+}

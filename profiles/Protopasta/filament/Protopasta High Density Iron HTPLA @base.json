@@ -15,7 +15,7 @@
 		"24"
 	],
 	"filament_notes": [
-		"60% iron by weight. Proto-Pasta publishes no TDS for this line; settings follow their metal-composite row (200C@24 mm3/s, 55C plate) and density is estimated at ~2x base polymer from their published description - verify by weighing a known length.\nAvoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in spool form. Anneal like HTPLA for heat resistance."
+		"High Density Iron HTPLA: 60% iron by weight. No TDS is published. Proto-Pasta's launch article (Endless Exploration EX10) printed it at 200C at up to 24 mm3/s with a 0.4 mm steel nozzle. The 55C plate and the 'avoid below 3 mm3/s' advice are borrowed from their other metal-composite rows. Density 2.4 g/cm3 is an estimate - verify by weighing a known length.\nHardened nozzle recommended. Heat treat at 100C for 10+ minutes for heat resistance up to about 150C; expect some shrinkage."
 	],
 	"hot_plate_temp": [
 		"55"

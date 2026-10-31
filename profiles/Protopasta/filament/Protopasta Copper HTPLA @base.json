@@ -15,7 +15,7 @@
 		"24"
 	],
 	"filament_notes": [
-		"Copper-filled metal-composite HTPLA. Proto-Pasta data: 200C@24 mm3/s, 55C plate; TDS 195C nozzle, 60C bed, density ~2.3 g/cm3 (~90-100 m per 500 g).\nAvoid printing below 3 mm3/s. Hardened nozzle recommended. Brittle in spool form. Polish by sanding/burnishing for real-metal luster; anneal like HTPLA for heat resistance."
+		"Copper-filled HTPLA. Material Data Table: 200C up to 24 mm3/s, 55C plate; avoid printing below 3 mm3/s; hard steel nozzle and gears recommended. TDS: 195C nozzle, 60C bed, density about 2.3 g/cm3 (the SDS says 2.5), about 97 m per 500 g.\nHeat treat like HTPLA (TDS: 95-110C, 10+ minutes) to firm up parts."
 	],
 	"hot_plate_temp": [
 		"55"

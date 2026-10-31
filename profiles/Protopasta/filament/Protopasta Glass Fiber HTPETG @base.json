@@ -12,7 +12,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Glass Fiber HTPETG (Highfive Blue, White).\nProto-Pasta publishes no numeric settings for this line; PETG-family defaults applied (250C@12 mm3/s, 80C plate). Stiff like PLA, durable like PETG, higher temperature resistance than GF PCTG.\nGlass fiber is abrasive - hardened nozzle recommended. Use Magigoo or glue stick."
+		"Glass Fiber HTPETG (White, Highfive Blue). Product page: same guidance as the carbon-fiber HTPETG - nozzle up to 300C, bed 100C+, flow below 100% and a nozzle wipe at layer change to limit buildup. Higher heat resistance than Glass Fiber PCTG.\nThis profile still uses Proto-Pasta's standard PETG numbers (250C, 80C plate, 12 mm3/s cap), which are below the product page's guidance - expect to raise the nozzle and bed temperatures.\nDry before printing. Hard steel nozzle required (abrasive). Use glue stick."
 	],
 	"hot_plate_temp": [
 		"80"

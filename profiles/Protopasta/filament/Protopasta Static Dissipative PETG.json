@@ -1,0 +1,10 @@
+{
+	"type": "filament",
+	"name": "Protopasta Static Dissipative PETG",
+	"inherits": "Protopasta Static Dissipative PETG @base",
+	"from": "system",
+	"setting_id": "n0stgowW994HUUAM",
+	"instantiation": "true",
+	"compatible_printers": [],
+	"compatible_printers_condition": ""
+}

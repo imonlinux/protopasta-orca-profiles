@@ -12,7 +12,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Clear PCTG.\nProto-Pasta publishes no numeric settings for this line; PCTG-family defaults applied. Use Magigoo or glue stick."
+		"Clear PCTG.\nProduct page: start from a Generic PETG or PCTG profile; 255C and up (they print up to 275C; 255C is a good compromise), 80C+ bed, about 2 mm3/s; reduce flow below 100% if material builds up on the nozzle.\nThis profile currently uses 250C, 80C plate and a 12 mm3/s cap - raise the nozzle toward 255C. Use Magigoo or glue stick."
 	],
 	"hot_plate_temp": [
 		"80"

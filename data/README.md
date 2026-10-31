@@ -1,19 +1,29 @@
 # Gathered source data
 
 Everything here was gathered from proto-pasta.com on 2026-10-18 while
-building the profiles. The TDS/SDS PDFs and page snapshots are Proto-Pasta's
-documents — kept locally for provenance but excluded from git (see
-.gitignore); only the URL lists and extracted facts are committed.
+building the profiles.
 
-- `product_urls.txt` — all 183 product URLs from the Shopify product sitemap
-  (`sitemap_products_1.xml`, also saved). The material-line grouping derived
-  from these handles is in the README coverage table.
-- `page_urls.txt` — the 41 non-product pages (FAQs, compatibility pages,
-  material data table) from the pages sitemap.
-- `tds/tds_summary.md` — density + temperature facts extracted from the 10
-  TDS and 15 SDS PDFs listed on the Material Data Table page, with the
-  source filename for each value.
-- `tds/*.pdf`, `sitemap*.xml` — local-only copies (gitignored).
+**In git:**
 
-Gathering method: sitemaps via curl with a browser user-agent; rendered page
-content via a web-reader service; PDF text via `pdftotext -layout`.
+- `product_urls.txt` – the 183 product URLs from the Shopify product sitemap.
+- `product_handles.txt` – the same 183 products as bare handles (the last
+  part of each URL). The README's coverage table groups these into material
+  lines.
+- `page_urls.txt` – the 41 non-product pages (FAQs, compatibility pages,
+  Material Data Table and so on) from the pages sitemap.
+- `tds/tds_summary.md` – density and temperature values taken from the 11 TDS
+  and 15 SDS PDFs linked from the Material Data Table, with the source file
+  for each value.
+
+**Local only (excluded by `.gitignore`, because they are Proto-Pasta's
+documents):**
+
+- `tds/*.pdf` – the TDS and SDS sheets themselves.
+- `sitemap.xml`, `sitemap_pages_1.xml`, `sitemap_products_1.xml` – the
+  sitemaps the URL lists came from.
+
+How it was gathered: sitemaps with curl (browser user-agent), page text with
+a web-reader service, PDF text with `pdftotext -layout`.
+
+Values taken from product pages, FAQ pages and launch articles are cited in
+`docs/SOURCES.md`; those pages were not saved here.

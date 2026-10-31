@@ -15,7 +15,7 @@
 		"12"
 	],
 	"filament_notes": [
-		"Covers Premium HTPLA v3, High Temp PLA v2 and all color lines (opaque, translucent, metallic, glitter, fluorescent, Quantum Dot, glow).\n220C suits ~6 mm3/s; raise toward 240C at 12 mm3/s (240C also improves layer fusion). Quantum Dot TDS: 220-240C nozzle, 55-65C bed.\nAnneal for heat resistance up to ~140-155C (vs ~55-60C as printed): oven at 85-115C for 5-60 min, ideally buried in silica sand or submerged in gel; treat with supports on.\nPrusa MK2/MK3 stock heatbreak: 235-240C helps avoid heat-creep jams."
+		"Covers Premium HTPLA v3, High Temp PLA v2 and the color lines (opaque, translucent, metallic, glitter, fluorescent, multicolor, glow) plus Quantum Dot HTPLA.\nMaterial Data Table: 220C up to 6 mm3/s, 240C up to 12 mm3/s, 55C plate. This profile uses 220C with a 12 mm3/s cap - raise toward 240C when printing near the cap. Quantum Dot TDS: 220-240C nozzle, 55-65C bed.\nHeat treating (after printing): TDS says 95-110C for 10+ minutes; the HTPLA FAQ says 95-120C, usually about 10 minutes, on a flat wood or silicone surface. Parts shrink, so scale them up in the slicer first. Heat-treated HTPLA holds its shape to roughly 140-155C.\nPrusa MK2/MK3 with the stock heatbreak: Proto-Pasta says 235-240C can help avoid jams at the heatbreak ledge, but recommends a different hotend as the better fix."
 	],
 	"hot_plate_temp": [
 		"55"

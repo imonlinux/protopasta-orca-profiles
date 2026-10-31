@@ -1,0 +1,14 @@
+{
+	"type": "filament",
+	"name": "Protopasta Rigid TPU @base",
+	"inherits": "fdm_filament_tpu",
+	"from": "system",
+	"filament_id": "PPF027",
+	"instantiation": "false",
+	"filament_vendor": [
+		"Protopasta"
+	],
+	"filament_notes": [
+		"Clear Rigid TPU, about 70D (replaced the earlier White Rigid TPU). Discontinued; kept for existing stock.\nProduct page: start printing at 240C, no bed heat needed; prep the bed with Magigoo to avoid a permanent bond; drying overnight recommended. This profile sets no values of its own and inherits Orca's Generic TPU values (240C nozzle, 35C bed, 3.2 mm3/s cap)."
+	]
+}
